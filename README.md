@@ -27,7 +27,7 @@ Then follow the procedure in the test.sh file. You may modify the `export` lines
 ```
 
 # Content of the repo
-```bash
+```
 .
 ├── README.md                           readme of the project
 ├── compose.yaml                        docker compose file
