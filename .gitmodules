@@ -1,0 +1,3 @@
+[submodule "third-party/deepface"]
+	path = third-party/deepface
+	url = https://github.com/serengil/deepface.git
