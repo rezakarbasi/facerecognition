@@ -6,6 +6,7 @@ _deepface_ is an opensource project which can extract and embed the face images 
 
 ### Buile the docker image that main docker image
 _my-api_ is the designed api which extracts the embedded vectors for the reference files, splits the incoming video and make the output to say when and where did the person has been seen. So, to build the docker image, stand in the repo's root and:
+- initialize the deepface repo: `git submodule update`
 - `cd docker`
 - `docker build -t my-api .`
 
@@ -23,4 +24,23 @@ Then follow the procedure in the test.sh file. You may modify the `export` lines
 # The output dictionary is just like this
 ```json
 [{"time": 22.0, "confidence": 1.0, "area": {"h": 58, "left_eye": [916, 194], "right_eye": [936, 195], "w": 43, "x": 903, "y": 172}, "dot_product": 83.38889444312156}, ...]
+```
+
+# Content of the repo
+```bash
+.
+├── README.md                           readme of the project
+├── compose.yaml                        docker compose file
+├── docker                              directory to build the my-api image
+│   ├── Dockerfile                      docker file to build my-api image
+│   ├── get_embed.py
+│   ├── reference                       the directory inside the docker image that handles the path to the reference images
+│   ├── requirements.txt                requirements of the docker image
+│   ├── video-folder                    the directory inside the docker image that handles the path to the video file
+│   └── view.py
+├── notebooks
+│   └── colab-test.ipynb                a colab notebook to test the deepface library
+├── test.sh                             the bash script commands for inference time
+└── third-party
+    └── deepface (submodule)            deepface repository(as a submodule)
 ```
