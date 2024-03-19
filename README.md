@@ -1,10 +1,10 @@
 # How to initialize the project
-## Buile the deepface docker image
+### Buile the deepface docker image
 deepface is an opensource project which can extract and embed the face images inside an image file or data. Thus, we need to first make the container. So, in order to make the deepface docker image stand in the repo's root and:
 - cd third-party/deepface/
 - docker build -t deepface .
 
-## Buile the docker image that main docker image
+### Buile the docker image that main docker image
 my-api is the designed api which extracts the embedded vectors for the reference files, splits the incoming video and make the output to say when and where did the person has been seen. So, to build the docker image, stand in the repo's root and:
 - cd docker
 - docker build -t my-api .
