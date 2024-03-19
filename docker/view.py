@@ -86,7 +86,7 @@ def process_video():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 6000))
-    reference_path = os.environ.get('REFERENCE_PATH', "/app/data/reference")
+    reference_path = os.environ.get('REFERENCE_PATH', "/app/reference")
     url = os.environ.get('URL', "http://0.0.0.0:5000/represent")
 
     _, _, files = next(os.walk(reference_path))
