@@ -10,4 +10,4 @@ services:
     ports:
       - 6000:6000
     volumes:
-      - /Users/rezakarbasi/PersonalFiles/Projects/4_OtherProj/didenegar-hiring/AI_Task/AI_Task/files/:/app/reference/
+      - /path/to/reference/directory/:/app/reference/

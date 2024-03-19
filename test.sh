@@ -1,4 +1,4 @@
-export LOCAL_PATH="/Users/rezakarbasi/PersonalFiles/Projects/4_OtherProj/didenegar-hiring/AI_Task/AI_Task/files/"
+export LOCAL_PATH="/path/to/the/video/directory/"
 export VIDEO_NAME="task-video.mp4"
 export LOCAL_VIDEO_PATH="${LOCAL_PATH}${VIDEO_NAME}"
 
