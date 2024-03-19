@@ -1,0 +1,13 @@
+version: '1'
+services:
+  deepface:
+    image: deepface:latest
+    ports:
+      - 5000:5000
+
+  my-api:
+    image: my-api:latest
+    ports:
+      - 6000:6000
+    volumes:
+      - /Users/rezakarbasi/PersonalFiles/Projects/4_OtherProj/didenegar-hiring/AI_Task/AI_Task/files/:/app/reference/
