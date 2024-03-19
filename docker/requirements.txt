@@ -1,6 +1,5 @@
 Flask
 requests
-json
-base64
+pybase64
 numpy
 opencv-python
