@@ -1,4 +1,9 @@
-# How to initialize the project
+# Overview
+This project focuses on utilizing open-source tools, specifically the DeepFace library, to identify individuals within video footage. By leveraging facial recognition technology, the system extracts reference images, embeds them into vectors, and then searches for these faces within the provided video content.<br>
+_In short_ give the reference images and video to find out when and where did the face has been detected.
+
+# How to use the project
+## Initialize
 ### Buile the _deepface_ docker image
 _deepface_ is an opensource project which can extract and embed the face images inside an image file or data. Thus, we need to first make the container. So, in order to make the _deepface_ docker image stand in the repo's root and:
 - `cd third-party/deepface/`
@@ -11,7 +16,7 @@ _my-api_ is the designed api which extracts the embedded vectors for the referen
 - `docker build -t my-api .`
 
 
-# In the inference time
+## In the inference time
 In the reference time, we need to specify the video file for _my-api_ container and it do the rest.
 
 First of all run the docker compose file : `docker-compose up` (make sure to replace volume according to your reference's local path).
@@ -21,7 +26,7 @@ Check that the two containers are up and ready to be used.
 Then follow the procedure in the test.sh file. You may modify the `export` lines and then run `sh run.sh`. The code will send a request to the _my-api_ container and it splits the video into frames, feeds it into the _deepface_, makes dotproduct on the embedded results and returns a dictionary as the output.
 
 
-# The output dictionary is just like this
+### The output dictionary is just like this
 ```json
 [{"time": 22.0, "confidence": 1.0, "area": {"h": 58, "left_eye": [916, 194], "right_eye": [936, 195], "w": 43, "x": 903, "y": 172}, "dot_product": 83.38889444312156}, ...]
 ```
